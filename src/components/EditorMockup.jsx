@@ -19,7 +19,7 @@ export default function EditorMockup() {
             Pr
           </span>
           <span className="font-mono text-xs text-neutral-400">
-            yaki_edit_final.prproj
+            EvAmP_edit_final.prproj
           </span>
         </div>
 
@@ -87,7 +87,7 @@ export default function EditorMockup() {
           <Calendar className="h-4 w-4" strokeWidth={2.5} />
         </span>
         <div className="leading-tight">
-          <p className="text-xs font-bold text-white">3+ years</p>
+          <p className="text-xs font-bold text-white">2+ years</p>
           <p className="text-[10px] text-neutral-500">editing experience</p>
         </div>
       </div>
