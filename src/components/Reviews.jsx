@@ -1,34 +1,47 @@
-import { Star } from "lucide-react";
+import { BadgeCheck, Star } from "lucide-react";
 import WarpText from "./text-animations/WarpText";
+import alexEubankAvatar from "../assets/creator-alex-eubank.jpg";
+import chizmoAvatar from "../assets/creator-chizmo.jpg";
+import jakeywakeyAvatar from "../assets/creator-jakeywakey.jpg";
+import jakeywakey2Avatar from "../assets/creator-jakeywakey2.jpg";
+import slaterSpinsAvatar from "../assets/creator-slaterspins.jpg";
 
 const REVIEWS = [
   {
-    name: "NovaStrike",
-    role: "1.2M subs — Tech",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=NovaStrike&backgroundColor=1f2937",
+    name: "Alex Eubank",
+    role: "1.34M subs",
+    avatar: alexEubankAvatar,
+    verified: true,
     quote:
       "Turnaround is insanely fast and the pacing on every hook keeps my retention way higher than my old editor."
   },
   {
-    name: "ShadowMeta",
-    role: "395K subs — Lifestyle",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ShadowMeta&backgroundColor=1f2937",
+    name: "jakeywakey",
+    role: "3.32K subs",
+    avatar: jakeywakeyAvatar,
     quote:
       "i rly appreciate the extra hands — having someone ready to help out whenever I need it is nice."
   },
   {
-    name: "ClutchWave",
-    role: "212K subs — Business",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ClutchWave&backgroundColor=1f2937",
+    name: "Jakeywakey 2",
+    role: "4.33K subs",
+    avatar: jakeywakey2Avatar,
     quote:
       "Communication is clear from brief to delivery. No back-and-forth headaches, just clean edits on time."
   },
   {
-    name: "ByteFalcon",
-    role: "430K subs — Education",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ByteFalcon&backgroundColor=1f2937",
+    name: "SlaterSpins",
+    role: "993 subs",
+    avatar: slaterSpinsAvatar,
     quote:
-      "The color grading alone made my channel look like it jumped a full production tier overnight."
+      "Every upload comes back tighter and more consistent than the last — exactly what a growing channel needs."
+  },
+  {
+    name: "chizmo",
+    role: "128 subs",
+    avatar: chizmoAvatar,
+    quote:
+      "Every edit comes back polished and on-brand — makes the whole process so much easier."
   }
 ];
 
@@ -82,7 +95,10 @@ export default function Reviews() {
                 className="h-10 w-10 rounded-full border border-white/10 object-cover"
               />
               <div>
-                <p className="text-sm font-bold text-white">{review.name}</p>
+                <p className="flex items-center gap-1 text-sm font-bold text-white">
+                  {review.name}
+                  {review.verified && <BadgeCheck className="h-4 w-4 shrink-0 text-brand" />}
+                </p>
                 <p className="text-xs text-neutral-500">{review.role}</p>
               </div>
             </div>

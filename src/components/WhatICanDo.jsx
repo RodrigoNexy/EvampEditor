@@ -1,43 +1,52 @@
 import { Clapperboard, BookOpen, Sparkles, Palette, Tag, Music } from "lucide-react";
-import ReflectiveCard from "./ReflectiveCard";
+import TearTicket from "./TearTicket";
 import WarpText from "./text-animations/WarpText";
+import videoEditingImg from "../assets/video-editing.png";
+import courseImg from "../assets/course.jfif";
+import motionGraphicsImg from "../assets/motiongrapics.jfif";
+import colorGradingImg from "../assets/colorgrading.jpg";
+import logoAnimationImg from "../assets/logoanimation.jpg";
+import audioEngineeringImg from "../assets/audioenginering.webp";
 
 const SERVICES = [
   {
-    icon: <Clapperboard className="h-7 w-7" />,
+    icon: <Clapperboard className="h-5 w-5" />,
     title: "YouTube Editing",
     description: "Engaging edits optimized for retention with perfect pacing.",
-    colors: ["#ff5c7a", "#8a5cff", "#00ffd1"]
+    image: videoEditingImg,
+    background: "var(--color-brand)"
   },
   {
-    icon: <BookOpen className="h-7 w-7" />,
+    icon: <BookOpen className="h-5 w-5" />,
     title: "Course Content",
     description: "Clear, educational content with professional polish.",
-    colors: ["#4d9fff", "#5227ff", "#00e0ff"]
+    image: courseImg
   },
   {
-    icon: <Sparkles className="h-7 w-7" />,
+    icon: <Sparkles className="h-5 w-5" />,
     title: "Motion Graphics",
     description: "Eye-catching animations that enhance your storytelling.",
-    colors: ["#00e5ff", "#5227ff", "#00ffd1"]
+    image: motionGraphicsImg,
+    background: "var(--color-brand)"
   },
   {
-    icon: <Palette className="h-7 w-7" />,
+    icon: <Palette className="h-5 w-5" />,
     title: "Color Grading",
     description: "Cinematic looks that give your videos a premium feel.",
-    colors: ["#ff8a65", "#ff5c7a", "#ffd166"]
+    image: colorGradingImg
   },
   {
-    icon: <Tag className="h-7 w-7" />,
+    icon: <Tag className="h-5 w-5" />,
     title: "Logo Animation",
     description: "Professional branding elements that stand out.",
-    colors: ["#00ffd1", "#00b8d9", "#5227ff"]
+    image: logoAnimationImg,
+    background: "var(--color-brand)"
   },
   {
-    icon: <Music className="h-7 w-7" />,
+    icon: <Music className="h-5 w-5" />,
     title: "Audio Engineering",
     description: "Crystal clear audio mix with noise reduction.",
-    colors: ["#ff5c33", "#ff9f4d", "#8a5cff"]
+    image: audioEngineeringImg
   }
 ];
 
@@ -68,27 +77,49 @@ export default function WhatICanDo() {
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 place-items-center gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service) => (
-          <ReflectiveCard
+          <TearTicket
             key={service.title}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
-            colors={service.colors}
-            overlayColor="rgba(0, 0, 0, 0.35)"
-            blurStrength={12}
-            glassDistortion={30}
-            metalness={1}
-            roughness={0.75}
-            displacementStrength={20}
-            noiseScale={1}
-            specularConstant={5}
-            grayscale={1}
-            color="#ffffff"
-          />
+            image={service.image}
+            imageAlt={service.title}
+            orientation="horizontal"
+            scrim
+            imageRadius={10}
+            width={400}
+            height={250}
+            stubSize={130}
+            radius={18}
+            holes={10}
+            holeSize={5}
+            background={service.background || "#18181b"}
+            stubBackground={service.background || "#141416"}
+            color="#f5f5f5"
+            border
+            borderColor="rgba(255,255,255,0.14)"
+            borderWidth={1}
+            ariaLabel={`Tear the ${service.title} ticket`}
+            stub={
+              <div className="flex h-full flex-col justify-center gap-2 p-4">
+                <div className={service.background ? "text-white" : "text-brand"}>{service.icon}</div>
+                <p
+                  className={`text-xs leading-relaxed ${service.background ? "text-white/80" : "text-neutral-300"}`}
+                >
+                  {service.description}
+                </p>
+              </div>
+            }
+          >
+            <div className="flex h-full flex-col justify-end p-4">
+              <h3 className="text-lg font-bold drop-shadow-md">{service.title}</h3>
+            </div>
+          </TearTicket>
         ))}
       </div>
+
+      <p className="mt-8 text-center text-sm text-neutral-400">
+        Psst — you can tear the stub off each ticket.
+      </p>
     </section>
   );
 }
