@@ -1,51 +1,41 @@
+import { BadgeCheck } from "lucide-react";
+import alexEubankAvatar from "../assets/creator-alex-eubank.jpg";
+import chizmoAvatar from "../assets/creator-chizmo.jpg";
+import jakeywakeyAvatar from "../assets/creator-jakeywakey.jpg";
+import jakeywakey2Avatar from "../assets/creator-jakeywakey2.jpg";
+import slaterSpinsAvatar from "../assets/creator-slaterspins.jpg";
+
 const CREATORS = [
   {
-    name: "NovaStrike",
-    subs: "1.2M subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=NovaStrike&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@novastrike"
+    name: "Alex Eubank",
+    subs: "1.34M subs",
+    avatar: alexEubankAvatar,
+    youtubeUrl: "https://www.youtube.com/@officialalexeubank",
+    verified: true
   },
   {
-    name: "PixelRaid",
-    subs: "870K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=PixelRaid&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@pixelraid"
+    name: "jakeywakey",
+    subs: "3.32K subs",
+    avatar: jakeywakeyAvatar,
+    youtubeUrl: "https://www.youtube.com/@itsjakex"
   },
   {
-    name: "GlitchKnight",
-    subs: "610K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=GlitchKnight&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@glitchknight"
+    name: "Jakeywakey 2",
+    subs: "4.33K subs",
+    avatar: jakeywakey2Avatar,
+    youtubeUrl: "https://www.youtube.com/@jakeplaysbj"
   },
   {
-    name: "ByteFalcon",
-    subs: "430K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ByteFalcon&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@bytefalcon"
+    name: "SlaterSpins",
+    subs: "993 subs",
+    avatar: slaterSpinsAvatar,
+    youtubeUrl: "https://www.youtube.com/@SlaterSpins"
   },
   {
-    name: "ShadowMeta",
-    subs: "395K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ShadowMeta&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@shadowmeta"
-  },
-  {
-    name: "ClutchWave",
-    subs: "212K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ClutchWave&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@clutchwave"
-  },
-  {
-    name: "RogueForge",
-    subs: "184K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=RogueForge&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@rogueforge"
-  },
-  {
-    name: "EchoSprint",
-    subs: "156K subs",
-    avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=EchoSprint&backgroundColor=1f2937",
-    youtubeUrl: "https://youtube.com/@echosprint"
+    name: "chizmo",
+    subs: "128 subs",
+    avatar: chizmoAvatar,
+    youtubeUrl: "https://www.youtube.com/@chizmogizmo"
   }
 ];
 
@@ -63,7 +53,10 @@ function CreatorCard({ creator }) {
         className="h-16 w-16 rounded-xl border border-white/10 object-cover transition-transform group-hover:scale-105"
       />
       <div className="text-center">
-        <p className="text-sm font-bold text-white">{creator.name}</p>
+        <p className="flex items-center justify-center gap-1 text-sm font-bold text-white">
+          {creator.name}
+          {creator.verified && <BadgeCheck className="h-4 w-4 shrink-0 text-brand" />}
+        </p>
         <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand">{creator.subs}</p>
       </div>
     </a>
