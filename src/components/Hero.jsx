@@ -39,11 +39,11 @@ export default function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-neutral-300">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Video Editor for Gaming Creators
+            Video Editor for Content Creators
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-            I deliver high-level video editing for gaming creators focused on{" "}
+            I deliver high-level video editing for creators focused on{" "}
             <span className="text-brand">retention.</span>
           </h1>
 

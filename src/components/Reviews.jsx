@@ -4,28 +4,28 @@ import WarpText from "./text-animations/WarpText";
 const REVIEWS = [
   {
     name: "NovaStrike",
-    role: "1.2M subs — Gaming",
+    role: "1.2M subs — Tech",
     avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=NovaStrike&backgroundColor=1f2937",
     quote:
       "Turnaround is insanely fast and the pacing on every hook keeps my retention way higher than my old editor."
   },
   {
     name: "ShadowMeta",
-    role: "395K subs — Gaming",
+    role: "395K subs — Lifestyle",
     avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ShadowMeta&backgroundColor=1f2937",
     quote:
       "i rly appreciate the extra hands — having someone ready to help out whenever I need it is nice."
   },
   {
     name: "ClutchWave",
-    role: "212K subs — Gaming",
+    role: "212K subs — Business",
     avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ClutchWave&backgroundColor=1f2937",
     quote:
       "Communication is clear from brief to delivery. No back-and-forth headaches, just clean edits on time."
   },
   {
     name: "ByteFalcon",
-    role: "430K subs — Gaming",
+    role: "430K subs — Education",
     avatar: "https://api.dicebear.com/9.x/bottts/svg?seed=ByteFalcon&backgroundColor=1f2937",
     quote:
       "The color grading alone made my channel look like it jumped a full production tier overnight."

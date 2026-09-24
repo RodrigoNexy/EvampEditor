@@ -7,37 +7,37 @@ const SERVICES = [
     icon: <Clapperboard className="h-7 w-7" />,
     title: "YouTube Editing",
     description: "Engaging edits optimized for retention with perfect pacing.",
-    youtubeId: "Pk7eBbD_dhc"
+    colors: ["#ff5c7a", "#8a5cff", "#00ffd1"]
   },
   {
     icon: <BookOpen className="h-7 w-7" />,
     title: "Course Content",
     description: "Clear, educational content with professional polish.",
-    youtubeId: "0FNic-xk94s"
+    colors: ["#4d9fff", "#5227ff", "#00e0ff"]
   },
   {
     icon: <Sparkles className="h-7 w-7" />,
     title: "Motion Graphics",
     description: "Eye-catching animations that enhance your storytelling.",
-    youtubeId: "F3NqBRajMmE"
+    colors: ["#00e5ff", "#5227ff", "#00ffd1"]
   },
   {
     icon: <Palette className="h-7 w-7" />,
     title: "Color Grading",
     description: "Cinematic looks that give your videos a premium feel.",
-    youtubeId: "AUKC6grEQgA"
+    colors: ["#ff8a65", "#ff5c7a", "#ffd166"]
   },
   {
     icon: <Tag className="h-7 w-7" />,
     title: "Logo Animation",
     description: "Professional branding elements that stand out.",
-    youtubeId: "1RdzbZA2jxw"
+    colors: ["#00ffd1", "#00b8d9", "#5227ff"]
   },
   {
     icon: <Music className="h-7 w-7" />,
     title: "Audio Engineering",
     description: "Crystal clear audio mix with noise reduction.",
-    youtubeId: "wufygB_Rnoc"
+    colors: ["#ff5c33", "#ff9f4d", "#8a5cff"]
   }
 ];
 
@@ -75,7 +75,7 @@ export default function WhatICanDo() {
             icon={service.icon}
             title={service.title}
             description={service.description}
-            youtubeId={service.youtubeId}
+            colors={service.colors}
             overlayColor="rgba(0, 0, 0, 0.35)"
             blurStrength={12}
             glassDistortion={30}

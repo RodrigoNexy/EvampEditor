@@ -13,7 +13,8 @@ const PillNav = ({
   hoveredPillTextColor = "#120F17",
   pillTextColor,
   onMobileMenuClick,
-  initialLoadAnimation = true
+  initialLoadAnimation = true,
+  logoSize = "56px"
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -209,7 +210,7 @@ const PillNav = ({
     "--hover-text": hoveredPillTextColor,
     "--pill-text": resolvedPillTextColor,
     "--nav-h": "42px",
-    "--logo": "36px",
+    "--logo": logoSize,
     "--pill-pad-x": "18px",
     "--pill-gap": "3px"
   };
@@ -228,10 +229,10 @@ const PillNav = ({
           ref={el => {
             logoRef.current = el;
           }}
-          className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+          className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden shrink-0"
           style={{
-            width: "var(--nav-h)",
-            height: "var(--nav-h)",
+            width: "var(--logo)",
+            height: "var(--logo)",
             background: "var(--base, #000)"
           }}
         >

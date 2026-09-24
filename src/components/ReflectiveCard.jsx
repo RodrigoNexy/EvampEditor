@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { loadYouTubeApi } from "../utils/loadYouTubeApi";
+import ColorBends from "./ColorBends";
 
 const ReflectiveCard = ({
   icon,
@@ -7,6 +8,7 @@ const ReflectiveCard = ({
   description,
   videoSrc,
   youtubeId,
+  colors,
   blurStrength = 12,
   color = "white",
   metalness = 1,
@@ -158,7 +160,26 @@ const ReflectiveCard = ({
         </defs>
       </svg>
 
-      {videoSrc ? (
+      {colors ? (
+        <div className="absolute inset-0 z-0 bg-black">
+          <ColorBends
+            colors={colors}
+            rotation={82}
+            speed={0.2}
+            scale={1.3}
+            frequency={1}
+            warpStrength={0.915}
+            mouseInfluence={0}
+            noise={0.28}
+            parallax={0}
+            iterations={1}
+            intensity={2}
+            bandWidth={9}
+            transparent
+            autoRotate={0}
+          />
+        </div>
+      ) : videoSrc ? (
         <video
           src={videoSrc}
           autoPlay
