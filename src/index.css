@@ -45,3 +45,72 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Hero editor mockup — 3D tilt with a subtle wiggle */
+.mockup-scene {
+  perspective: 1400px;
+}
+
+.mockup-3d {
+  transform-style: preserve-3d;
+  transform: rotateX(8deg) rotateY(12deg) rotateZ(1deg);
+  animation: mockup-wiggle 7s ease-in-out infinite;
+}
+
+.mockup-3d .preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@keyframes mockup-wiggle {
+  0%,
+  100% {
+    transform: rotateX(8deg) rotateY(12deg) rotateZ(1deg) translateY(0);
+  }
+  25% {
+    transform: rotateX(6deg) rotateY(9deg) rotateZ(0.4deg) translateY(-4px);
+  }
+  50% {
+    transform: rotateX(9deg) rotateY(14deg) rotateZ(1.4deg) translateY(-8px);
+  }
+  75% {
+    transform: rotateX(7deg) rotateY(10deg) rotateZ(0.6deg) translateY(-3px);
+  }
+}
+
+.timeline-track {
+  animation: track-wiggle 3.2s ease-in-out infinite;
+}
+
+@keyframes track-wiggle {
+  0%,
+  100% {
+    transform: translateZ(var(--z)) translateX(0) rotateZ(0deg);
+  }
+  50% {
+    transform: translateZ(calc(var(--z) + 6px)) translateX(3px) rotateZ(-0.6deg);
+  }
+}
+
+.timeline-playhead {
+  animation: playhead-scrub 5s ease-in-out infinite alternate;
+}
+
+@keyframes playhead-scrub {
+  from {
+    left: 12%;
+  }
+  to {
+    left: 88%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-3d,
+  .timeline-track,
+  .timeline-playhead {
+    animation: none;
+  }
+  .timeline-track {
+    transform: translateZ(var(--z));
+  }
+}

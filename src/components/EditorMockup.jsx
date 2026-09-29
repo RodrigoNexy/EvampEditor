@@ -1,5 +1,18 @@
 import { Calendar, Zap } from "lucide-react";
 
+const TRACKS = [
+  {
+    label: "V1",
+    z: 34,
+    clips: [
+      { left: "8%", width: "28%", color: "bg-indigo-400/80" },
+      { left: "42%", width: "35%", color: "bg-indigo-400/80" }
+    ]
+  },
+  { label: "A1", z: 24, clips: [{ left: "0%", width: "55%", color: "bg-emerald-500/70" }] },
+  { label: "A2", z: 14, clips: [{ left: "10%", width: "85%", color: "bg-emerald-500/70" }] }
+];
+
 const CLIPS = [
   { name: "hook_v3...", color: "bg-indigo-400" },
   { name: "gameplay_...", color: "bg-indigo-400" },
@@ -10,11 +23,12 @@ const CLIPS = [
 
 export default function EditorMockup() {
   return (
-    <div className="relative mx-auto w-full max-w-lg">
-      {/* Main editor panel */}
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/90 shadow-2xl">
+    <div className="mockup-scene mx-auto w-full max-w-lg">
+    <div className="mockup-3d relative">
+      {/* Main editor panel — no overflow-hidden here, it would flatten the 3D children */}
+      <div className="preserve-3d rounded-2xl border border-white/10 bg-neutral-900/90 shadow-2xl shadow-brand/20">
         {/* Title bar */}
-        <div className="flex items-center gap-2 border-b border-white/10 bg-neutral-900 px-4 py-3">
+        <div className="flex items-center gap-2 rounded-t-2xl border-b border-white/10 bg-neutral-900 px-4 py-3">
           <span className="flex h-5 w-5 items-center justify-center rounded bg-violet-600 text-[10px] font-bold text-white">
             Pr
           </span>
@@ -57,32 +71,47 @@ export default function EditorMockup() {
           </div>
         </div>
 
-        {/* Timeline */}
-        <div className="space-y-1.5 border-t border-white/10 bg-neutral-950/40 px-4 py-3">
-          <div className="relative h-2 rounded-full bg-neutral-800">
-            <div className="absolute left-[8%] h-full w-[28%] rounded-full bg-indigo-400/80" />
-            <div className="absolute left-[42%] h-full w-[35%] rounded-full bg-indigo-400/80" />
-            <div className="absolute left-[52%] top-1/2 h-4 w-px -translate-y-1/2 bg-brand" />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-5 font-mono text-[9px] text-neutral-600">A1</span>
-            <div className="relative h-2 flex-1 rounded-full bg-neutral-800">
-              <div className="absolute left-0 h-full w-[55%] rounded-full bg-emerald-500/70" />
-              <div className="absolute left-[52%] top-1/2 h-4 w-px -translate-y-1/2 bg-brand" />
+        {/* Timeline — each track floats at its own depth */}
+        <div
+          className="preserve-3d relative space-y-1.5 rounded-b-2xl border-t border-white/10 bg-neutral-950/60 px-4 py-3"
+          style={{ transform: "translateZ(18px)" }}
+        >
+          {TRACKS.map((track, i) => (
+            <div
+              key={track.label}
+              className="timeline-track flex items-center gap-2"
+              style={{ "--z": `${track.z}px`, animationDelay: `${i * -0.45}s` }}
+            >
+              <span className="w-5 font-mono text-[9px] text-neutral-600">{track.label}</span>
+              <div className="relative h-2 flex-1 rounded-full bg-neutral-800 shadow-lg shadow-black/40">
+                {track.clips.map((clip) => (
+                  <div
+                    key={clip.left}
+                    className={`absolute h-full rounded-full ${clip.color}`}
+                    style={{ left: clip.left, width: clip.width }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-5 font-mono text-[9px] text-neutral-600">A2</span>
-            <div className="relative h-2 flex-1 rounded-full bg-neutral-800">
-              <div className="absolute left-[10%] h-full w-[85%] rounded-full bg-emerald-500/70" />
-              <div className="absolute left-[52%] top-1/2 h-4 w-px -translate-y-1/2 bg-brand" />
+          ))}
+
+          {/* Playhead spans all tracks (offset past the track labels) */}
+          <div
+            className="pointer-events-none absolute bottom-2 left-[44px] right-4 top-2"
+            style={{ transform: "translateZ(40px)" }}
+          >
+            <div className="timeline-playhead absolute inset-y-0 w-px bg-brand shadow-[0_0_8px_#5227ff]">
+              <span className="absolute -left-1 -top-1 h-2 w-2 rotate-45 bg-brand" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Floating badge: experience */}
-      <div className="absolute -top-5 right-2 flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900 px-3 py-2 shadow-xl sm:-right-6">
+      <div
+        className="absolute -top-5 right-2 flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900 px-3 py-2 shadow-xl sm:-right-6"
+        style={{ transform: "translateZ(60px)" }}
+      >
         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-black/40 text-brand">
           <Calendar className="h-4 w-4" strokeWidth={2.5} />
         </span>
@@ -93,7 +122,10 @@ export default function EditorMockup() {
       </div>
 
       {/* Floating badge: turnaround */}
-      <div className="absolute -bottom-5 left-2 flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900 px-3 py-2 shadow-xl sm:-left-6">
+      <div
+        className="absolute -bottom-5 left-2 flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900 px-3 py-2 shadow-xl sm:-left-6"
+        style={{ transform: "translateZ(70px)" }}
+      >
         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-black/40 text-brand">
           <Zap className="h-4 w-4" strokeWidth={2.5} />
         </span>
@@ -102,6 +134,7 @@ export default function EditorMockup() {
           <p className="text-[10px] text-neutral-500">Fast turnaround</p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
