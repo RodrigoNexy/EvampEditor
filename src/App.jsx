@@ -5,6 +5,7 @@ import MyWork from "./components/MyWork";
 import WhatICanDo from "./components/WhatICanDo";
 import TrustedCreators from "./components/TrustedCreators";
 import Reviews from "./components/Reviews";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <WhatICanDo />
         <Reviews />
       </main>
+      <Footer />
     </div>
   );
 }

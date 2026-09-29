@@ -1,10 +1,14 @@
+import { useCallback, useState } from "react";
 import { Calendar, Play } from "lucide-react";
 import EditorMockup from "./EditorMockup";
 import CRTWarp from "./backgrounds/CRTWarp";
-
-const AVATARS = [13, 33, 47, 65];
+import ContactModal from "./ContactModal";
+import { CREATORS } from "./TrustedCreators";
 
 export default function Hero() {
+  const [contactOpen, setContactOpen] = useState(false);
+  const closeContact = useCallback(() => setContactOpen(false), []);
+
   return (
     <section id="home" className="relative isolate overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -56,13 +60,14 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#book-a-call"
-              className="flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition-transform hover:scale-[1.02]"
+            <button
+              type="button"
+              onClick={() => setContactOpen(true)}
+              className="flex cursor-pointer items-center gap-2 rounded-xl bg-brand px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition-transform hover:scale-[1.02]"
             >
               <Calendar className="h-4 w-4" strokeWidth={2.5} />
               Book a Free Call
-            </a>
+            </button>
             <a
               href="#my-work"
               className="flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-neutral-800"
@@ -74,20 +79,18 @@ export default function Hero() {
 
           <div className="mt-10 flex items-center gap-3">
             <div className="flex -space-x-3">
-              {AVATARS.map((id) => (
+              {CREATORS.map((creator) => (
                 <img
-                  key={id}
-                  src={`https://i.pravatar.cc/64?img=${id}`}
-                  alt=""
+                  key={creator.name}
+                  src={creator.avatar}
+                  alt={creator.name}
+                  title={creator.name}
                   className="h-9 w-9 rounded-full object-cover ring-2 ring-neutral-950"
                 />
               ))}
             </div>
             <p className="text-sm text-neutral-400">
               Trusted by <span className="font-semibold text-white">big creators</span>{" "}
-              reaching a{" "}
-              <span className="font-semibold text-white">5.5M+</span> combined
-              audience.
             </p>
           </div>
         </div>
@@ -96,6 +99,8 @@ export default function Hero() {
         <EditorMockup />
       </div>
       </div>
+
+      <ContactModal open={contactOpen} onClose={closeContact} />
     </section>
   );
 }

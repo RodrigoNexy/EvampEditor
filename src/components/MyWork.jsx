@@ -13,6 +13,22 @@ const CATEGORY_DOT = {
 
 const PROJECTS = [
   {
+    id: "_7BB6hyUNOQ",
+    title: "Steel Ball Run... But It's Real Life",
+    channel: "Zander Small",
+    category: "Long Form",
+    featured: true,
+    featuredNote: "Edited for Zander Small — 99.7K subscribers on YouTube"
+  },
+  {
+    id: "7_R27pa_NR4",
+    title: "Spending $8,592,587 for The BEST JUMPSHOT in Arcade Basketball!",
+    channel: "chizmo",
+    category: "Long Form",
+    featured: true,
+    featuredNote: "Edited for chizmo — Roblox gaming channel"
+  },
+  {
     id: "go-8lf_GbMs",
     title: "I Risked $25,000 Playing Online Blackjack… For This?!",
     channel: "Jakeywakey 2",
@@ -31,14 +47,14 @@ const PROJECTS = [
     category: "Long Form"
   },
   {
-    id: "UeDTWSGyIZk",
-    title: "All-Star Vlog",
-    channel: "RWZ PLAYER",
+    id: "IjO4vIjEwbE",
+    title: "Scoring as Cristiano Ronaldo in EVERY Roblox Soccer Game",
+    channel: "chizmo",
     category: "Long Form"
   },
   {
-    id: "IjO4vIjEwbE",
-    title: "Scoring as Cristiano Ronaldo in EVERY Roblox Soccer Game",
+    id: "unvro80-GP0",
+    title: "Playing Until I GET OP POWERS in Roblox Racket Rivals..",
     channel: "chizmo",
     category: "Long Form"
   },
@@ -47,6 +63,22 @@ const PROJECTS = [
     title: "Ganley Documentary",
     channel: "RWZ PLAYER",
     category: "Motion Graphics"
+  },
+  {
+    id: "0__jGsiR3Ys",
+    title: "Alex Eubank — Fitness Short #1",
+    channel: "Alex Eubank",
+    category: "Short Form",
+    featured: true,
+    featuredNote: "Edited for Alex Eubank — 2.6M followers on Instagram"
+  },
+  {
+    id: "GBCtoUEdH0Q",
+    title: "Alex Eubank — Fitness Short #2",
+    channel: "Alex Eubank",
+    category: "Short Form",
+    featured: true,
+    featuredNote: "Edited for Alex Eubank — 2.6M followers on Instagram"
   },
   {
     id: "3j4uKFOkuD4",
@@ -65,22 +97,6 @@ const PROJECTS = [
     title: "Podcast Clip",
     channel: "RWZ PLAYER",
     category: "Short Form"
-  },
-  {
-    id: "0__jGsiR3Ys",
-    title: "Alex Eubank — Fitness Short #1",
-    channel: "Alex Eubank",
-    category: "Short Form",
-    featured: true,
-    featuredNote: "Edited for Alex Eubank — 2.6M followers on Instagram"
-  },
-  {
-    id: "GBCtoUEdH0Q",
-    title: "Alex Eubank — Fitness Short #2",
-    channel: "Alex Eubank",
-    category: "Short Form",
-    featured: true,
-    featuredNote: "Edited for Alex Eubank — 2.6M followers on Instagram"
   }
 ].map((project) => ({
   ...project,

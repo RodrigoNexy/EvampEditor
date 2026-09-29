@@ -4,14 +4,21 @@ import chizmoAvatar from "../assets/creator-chizmo.jpg";
 import jakeywakeyAvatar from "../assets/creator-jakeywakey.jpg";
 import jakeywakey2Avatar from "../assets/creator-jakeywakey2.jpg";
 import slaterSpinsAvatar from "../assets/creator-slaterspins.jpg";
+import zanderAvatar from "../assets/zander.jpg";
 
-const CREATORS = [
+export const CREATORS = [
   {
     name: "Alex Eubank",
     subs: "1.34M subs",
     avatar: alexEubankAvatar,
     youtubeUrl: "https://www.youtube.com/@officialalexeubank",
     verified: true
+  },
+  {
+    name: "Zander Small",
+    subs: "99.7K subs",
+    avatar: zanderAvatar,
+    youtubeUrl: "https://www.youtube.com/channel/UCjRnPXmt8RZQcmaaAhpCrEA"
   },
   {
     name: "jakeywakey",
