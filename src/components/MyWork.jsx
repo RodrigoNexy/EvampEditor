@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Play, ChevronRight, Star } from "lucide-react";
 import RubberSegment from "./RubberSegment";
 import WarpText from "./text-animations/WarpText";
@@ -104,8 +104,24 @@ const PROJECTS = [
   thumbnail: `https://i.ytimg.com/vi/${project.id}/hqdefault.jpg`
 }));
 
+const MOBILE_QUERY = "(max-width: 639px)";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia(MOBILE_QUERY).matches);
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const onChange = (e) => setIsMobile(e.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
+
+  return isMobile;
+}
+
 export default function MyWork() {
   const [filter, setFilter] = useState("All");
+  const isMobile = useIsMobile();
   const projects = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
   return (
@@ -138,8 +154,10 @@ export default function MyWork() {
         </p>
       </div>
 
-      <div className="mt-8 flex justify-center">
+      {/* Horizontal scroll is only a fallback for very narrow phones */}
+      <div className="mt-8 flex overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
         <RubberSegment
+          className="mx-auto shrink-0 text-xs sm:text-sm"
           items={FILTERS}
           value={filter}
           onChange={(next) => setFilter(next)}
@@ -147,7 +165,8 @@ export default function MyWork() {
           thumbColor="#5227FF"
           textColor="#a3a3a3"
           activeTextColor="#ffffff"
-          size="md"
+          size={isMobile ? "xs" : "md"}
+          equalSlots={!isMobile}
           radius={12}
           inset={3}
         />
