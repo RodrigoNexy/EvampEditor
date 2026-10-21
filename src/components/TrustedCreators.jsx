@@ -28,7 +28,7 @@ export const CREATORS = [
   },
   {
     name: "Jakeywakey 2",
-    subs: "4.33K subs",
+    subs: "4.57K subs",
     avatar: jakeywakey2Avatar,
     youtubeUrl: "https://www.youtube.com/@jakeplaysbj"
   },
@@ -40,9 +40,10 @@ export const CREATORS = [
   },
   {
     name: "chizmo",
-    subs: "128 subs",
+    subs: "1.63K subs",
     avatar: chizmoAvatar,
-    youtubeUrl: "https://www.youtube.com/@chizmogizmo"
+    youtubeUrl: "https://www.youtube.com/@chizmogizmo",
+    verified: true
   }
 ];
 

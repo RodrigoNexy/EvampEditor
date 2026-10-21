@@ -13,6 +13,14 @@ const CATEGORY_DOT = {
 
 const PROJECTS = [
   {
+    id: "Bz8Kr8cU4kQ",
+    title: "Your Life a Year From Now Starts With What You Do Today",
+    channel: "Alex Eubank",
+    category: "Long Form",
+    featured: true,
+    featuredNote: "Edited for Alex Eubank — 1.34M subscribers on YouTube"
+  },
+  {
     id: "_7BB6hyUNOQ",
     title: "Steel Ball Run... But It's Real Life",
     channel: "Zander Small",
@@ -21,16 +29,22 @@ const PROJECTS = [
     featuredNote: "Edited for Zander Small — 99.7K subscribers on YouTube"
   },
   {
-    id: "7_R27pa_NR4",
-    title: "Spending $8,592,587 for The BEST JUMPSHOT in Arcade Basketball!",
+    id: "28zfHgZ0WNw",
+    title: "I Tested 1 Soccer Game From EVERY YEAR on Roblox",
     channel: "chizmo",
     category: "Long Form",
     featured: true,
-    featuredNote: "Edited for chizmo — Roblox gaming channel"
+    featuredNote: "Edited for chizmo — 1.63K subscribers on YouTube"
   },
   {
     id: "go-8lf_GbMs",
     title: "I Risked $25,000 Playing Online Blackjack… For This?!",
+    channel: "Jakeywakey 2",
+    category: "Long Form"
+  },
+  {
+    id: "8agtEpOX0xg",
+    title: "I Spent $100,000 on PRIVÉ Blackjack For THIS...",
     channel: "Jakeywakey 2",
     category: "Long Form"
   },
@@ -55,6 +69,48 @@ const PROJECTS = [
   {
     id: "unvro80-GP0",
     title: "Playing Until I GET OP POWERS in Roblox Racket Rivals..",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "PkFPuLBshgc",
+    title: "I Became YOUNG RONALDO in Roblox Soccer!",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "7_R27pa_NR4",
+    title: "Spending $8,592,587 for The BEST JUMPSHOT in Arcade Basketball!",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "F-Bszz6Nwnc",
+    title: "I Became LAMINE YAMAL in Roblox Soccer!",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "EBX_utIUtiw",
+    title: "Scoring as Lionel Messi in EVERY Roblox Soccer Game",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "fk4cXXfkpdI",
+    title: "I Spent 24 Hours as EMI MARTINEZ in Roblox!",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "-fXcTT15okg",
+    title: "I Tested Roblox Soccer Games..",
+    channel: "chizmo",
+    category: "Long Form"
+  },
+  {
+    id: "iPaFTnesEj4",
+    title: "I Spent 24 Hours as CRISTIANO RONALDO in Roblox!",
     channel: "chizmo",
     category: "Long Form"
   },

@@ -24,7 +24,7 @@ const REVIEWS = [
   },
   {
     name: "Jakeywakey 2",
-    role: "4.33K subs",
+    role: "4.57K subs",
     avatar: jakeywakey2Avatar,
     quote:
       "Communication is clear from brief to delivery. No back-and-forth headaches, just clean edits on time."
@@ -38,8 +38,9 @@ const REVIEWS = [
   },
   {
     name: "chizmo",
-    role: "128 subs",
+    role: "1.63K subs",
     avatar: chizmoAvatar,
+    verified: true,
     quote:
       "Every edit comes back polished and on-brand — makes the whole process so much easier."
   }
