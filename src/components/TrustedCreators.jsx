@@ -4,9 +4,17 @@ import chizmoAvatar from "../assets/creator-chizmo.jpg";
 import jakeywakeyAvatar from "../assets/creator-jakeywakey.jpg";
 import jakeywakey2Avatar from "../assets/creator-jakeywakey2.jpg";
 import slaterSpinsAvatar from "../assets/creator-slaterspins.jpg";
+import slaterAvatar from "../assets/Slater2.jpg";
 import zanderAvatar from "../assets/zander.jpg";
 
 export const CREATORS = [
+  {
+    name: "slater",
+    subs: "2.61M subs",
+    avatar: slaterAvatar,
+    youtubeUrl: "https://www.youtube.com/@slaterkodish",
+    verified: true
+  },
   {
     name: "Alex Eubank",
     subs: "1.34M subs",

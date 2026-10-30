@@ -13,6 +13,14 @@ const CATEGORY_DOT = {
 
 const PROJECTS = [
   {
+    id: "zklMMpslxNg",
+    title: "They COULDN'T Stop LAUGHING...",
+    channel: "slater",
+    category: "Long Form",
+    featured: true,
+    featuredNote: "Edited for slater — 2.61M subscribers on YouTube"
+  },
+  {
     id: "Bz8Kr8cU4kQ",
     title: "Your Life a Year From Now Starts With What You Do Today",
     channel: "Alex Eubank",
