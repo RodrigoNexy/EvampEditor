@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { Play, ChevronRight, Star } from "lucide-react";
+import { Play, ChevronRight, Star, Eye } from "lucide-react";
 import RubberSegment from "./RubberSegment";
 import WarpText from "./text-animations/WarpText";
+import VIEWS from "../data/youtube-views.json";
+
+const formatViews = (n) =>
+  new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(n);
 
 const FILTERS = ["All", "Motion Graphics", "Short Form", "Long Form"];
 
@@ -29,6 +33,14 @@ const PROJECTS = [
     featuredNote: "Edited for Alex Eubank — 1.34M subscribers on YouTube"
   },
   {
+    id: "sMffEVNdgyc",
+    title: "Scoring 1 Amazing Goal For Every Letter in Illegal Soccer! (Roblox)",
+    channel: "chizmo",
+    category: "Long Form",
+    featured: true,
+    featuredNote: "Edited for chizmo — 3.8K subscribers on YouTube"
+  },
+  {
     id: "_7BB6hyUNOQ",
     title: "Steel Ball Run... But It's Real Life",
     channel: "Zander Small",
@@ -42,7 +54,7 @@ const PROJECTS = [
     channel: "chizmo",
     category: "Long Form",
     featured: true,
-    featuredNote: "Edited for chizmo — 1.63K subscribers on YouTube"
+    featuredNote: "Edited for chizmo — 3.8K subscribers on YouTube"
   },
   {
     id: "go-8lf_GbMs",
@@ -58,6 +70,7 @@ const PROJECTS = [
   },
   {
     id: "-ILNn89JGxQ",
+    hideViews: true,
     title: "SlaterSpins — Gambling Vlog",
     channel: "SlaterSpins",
     category: "Long Form"
@@ -124,12 +137,14 @@ const PROJECTS = [
   },
   {
     id: "gT3Pi2Hk5qo",
+    hideViews: true,
     title: "Ganley Documentary",
     channel: "RWZ PLAYER",
     category: "Motion Graphics"
   },
   {
     id: "0__jGsiR3Ys",
+    hideViews: true,
     title: "Alex Eubank — Fitness Short #1",
     channel: "Alex Eubank",
     category: "Short Form",
@@ -138,6 +153,7 @@ const PROJECTS = [
   },
   {
     id: "GBCtoUEdH0Q",
+    hideViews: true,
     title: "Alex Eubank — Fitness Short #2",
     channel: "Alex Eubank",
     category: "Short Form",
@@ -146,24 +162,29 @@ const PROJECTS = [
   },
   {
     id: "3j4uKFOkuD4",
+    hideViews: true,
     title: "Short-Form Edit #1",
     channel: "RWZ PLAYER",
     category: "Short Form"
   },
   {
     id: "uzB6o93GKQI",
+    hideViews: true,
     title: "Short-Form Edit #2",
     channel: "RWZ PLAYER",
     category: "Short Form"
   },
   {
     id: "jOoo_D-jLhE",
+    hideViews: true,
     title: "Podcast Clip",
     channel: "RWZ PLAYER",
     category: "Short Form"
   }
 ].map((project) => ({
   ...project,
+  // Re-uploads on my own channel would show my view counts, not the creator's
+  views: project.hideViews ? null : (VIEWS[project.id] ?? null),
   url: `https://www.youtube.com/watch?v=${project.id}`,
   thumbnail: `https://i.ytimg.com/vi/${project.id}/hqdefault.jpg`
 }));
@@ -275,6 +296,13 @@ export default function MyWork() {
                   <Play className="h-5 w-5 translate-x-0.5 fill-current" strokeWidth={0} />
                 </span>
               </div>
+
+              {project.views != null && (
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-black/60 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur transition-all duration-200 sm:translate-y-1 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
+                  <Eye className="h-3.5 w-3.5" />
+                  {formatViews(project.views)} views
+                </div>
+              )}
             </div>
 
             <div className="flex items-center justify-between gap-2 p-3.5">
